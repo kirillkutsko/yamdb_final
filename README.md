@@ -13,6 +13,7 @@ ip = 84.201.132.67
 
 Стек:
 
+
 Django 4.1.1
 DRF 3.14.0
 djangorestframework-simplejwt 5.2.1
