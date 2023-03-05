@@ -1,7 +1,7 @@
 ![workflow](https://github.com/kirillkutsko/yamdb_final/actions/workflows/main.yml/badge.svg)
 
 ip = 84.201.132.67
-деплой на сервер не удаётся, в чем может быть проблема? в пачке скину скрин с подробностями с гитхаба
+
 
 # yamdb_final
 Описание
