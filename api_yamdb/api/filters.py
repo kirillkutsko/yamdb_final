@@ -1,26 +1,16 @@
-from django_filters import rest_framework as filters
-
+from django_filters import rest_framework
 from reviews.models import Title
 
 
-class TitleFilter(filters.FilterSet):
-    category = filters.CharFilter(
-        field_name='category__slug',
-        lookup_expr='icontains'
-    )
-    genre = filters.CharFilter(
-        field_name='genre__slug',
-        lookup_expr='icontains'
-    )
-    name = filters.CharFilter(
-        field_name='name',
-        lookup_expr='icontains'
-    )
-    year = filters.NumberFilter(
-        field_name='year',
-        lookup_expr='icontains'
-    )
+class TitleFilter(rest_framework.FilterSet):
+    category = rest_framework.CharFilter(field_name='category__slug',
+                                         lookup_expr='contains')
+    genre = rest_framework.CharFilter(field_name='genre__slug',
+                                      lookup_expr='contains')
+    name = rest_framework.CharFilter(field_name='name',
+                                     lookup_expr='contains')
+    year = rest_framework.CharFilter(field_name='year')
 
     class Meta:
         model = Title
-        fields = '__all__'
+        fields = ['category', 'genre', 'name', 'year']
