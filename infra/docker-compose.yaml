@@ -3,12 +3,18 @@ version: '3.8'
 services:
   db:
     image: postgres:13.0-alpine
+    container_name: postgres13
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - db_value:/var/lib/postgresql/data/
     env_file:
       - ./.env
 
   web:
+    container_name: web
     image: kirillkutsko/yamdb_final:latest
     restart: always
     volumes:
@@ -20,6 +26,7 @@ services:
       - ./.env
 
   nginx:
+    container_name: nginx
     image: nginx:1.21.3-alpine
     ports:
       - "80:80"
