@@ -1,6 +1,6 @@
 ![workflow](https://github.com/kirillkutsko/yamdb_final/actions/workflows/main.yml/badge.svg)
 
-ip = 84.201.132.67
+ip = 51.250.87.105
   
 # yamdb_final
 Описание
